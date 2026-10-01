@@ -12,14 +12,4 @@ import java.sql.Timestamp;
 @Entity
 public class Board {
 
-    @Id // 이 필드가 기본기 임을 나타냄
-    // 기본키 값을 자동으로 생성 (IDENTITY 전략 -> DB 기본 설정 따른다) AUTO_INCREMENT 기능 사용
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    // 별도 어노테이션이 없으면 필드명이 컬럼명이 됨.
-    private String title;
-    private String content;
-    private String username;
-    private Timestamp createdAt; // created_at 컬럼(스프링이 기본값이 스네이크 케이스로 자동 변환 해 줌)
 }
