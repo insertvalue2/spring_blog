@@ -15,6 +15,8 @@ public class UserController {
         // templates/   <-- 콘텐츠 루트 경로
         return "user/join-form";
     }
+
+
     // GET http://localhost:8080/login
     @GetMapping("/login")
     public String loginForm() {
