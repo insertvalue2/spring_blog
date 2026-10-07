@@ -8,6 +8,10 @@
                   사용자의 이름과 비밀번호를 작성해야 되기 때문에 보안상 이유로 반드시 POST
                   요청을 해야 한다.  -->
             <form action="/login" method="post">
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberId" name="rememberId" value="true">
+                    <label class="form-check-label" for="rememberId">아이디 저장</label>
+                </div>
                 <div class="mb-3">
                     <input type="text" class="form-control" placeholder="사용자명" name="username" value="minsu">
                 </div>
