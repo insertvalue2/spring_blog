@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.context.annotation.Import;
 
-@Import(BoardPersistRepository.class)
+@Import(BoardJpaRepository.class)
 @DataJpaTest
 public class BoardPersistRepositoryTest {
 
     @Autowired
-    private BoardPersistRepository boardPersistRepository;
+    private BoardJpaRepository boardPersistRepository;
 
     @Test
     public void delete_게시글_삭제_테스트() {
