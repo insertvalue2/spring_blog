@@ -1,5 +1,6 @@
 package com.tenco.spring_blog.payment;
 
+import com.tenco.spring_blog.refund.Refund;
 import com.tenco.spring_blog.user.User;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 // 결제 내역 엔티티 (포트원 V2)
 // - paymentId :  우리 서버가 발급한 결제 건 식별자 (유니크, 중복 지급 방지)
@@ -53,6 +55,7 @@ public class Payment {
         this.status = PaymentStatus.READY; // 처음에는 항상 결제 예정
     }
 
+
     // 편의 메서드 설계
 
     // 결제를 요청한 사용자인지 확인
@@ -69,6 +72,10 @@ public class Payment {
     public void markPaid(String pgTxId) {
         this.status = PaymentStatus.PAID; // 결제 상태를 완료로 변경
         this.pgTxId = pgTxId; // null 값 허용
+    }
+
+    public void markCancelled() {
+        this.status = PaymentStatus.CANCELLED;
     }
 
 }
